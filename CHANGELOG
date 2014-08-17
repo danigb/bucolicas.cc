@@ -1,1 +1,6 @@
 rvm --ruby-version use 2.0.0@middleman
+middleman init .
+middleman server
+middleman build [--clean]
+middleman deploy [--build-before]
+SERVER: /etc/nginx/sites-enabled/
