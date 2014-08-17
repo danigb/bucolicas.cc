@@ -1,10 +1,51 @@
 ---
-title: Welcome to Middleman
+title: 'El sur: instrucciones de uso'
 ---
 
-<div class="welcome">
-  <h1>Middleman is Watching</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+<div class="publication container">
+  <div class="main">
+    <div class="info">
+      <h1>El sur: instrucciones de uso</h1>
+      <p>Por <%= link_to 'Autoediciones Bucólicas', '/' %></p>
+    </div>
+    <div class="controls">
+      <a href="/pdfs/El-sur.pdf">
+        <%= image_tag 'ui/play_big.png', alt: 'Descargar PDF completo', width: 47, height: 45 %>
+        <div class="length">110 páginas</div>
+      </a>
+    </div>
+    <div class="content">
+      <p>La luz del sur. El buen calor. La cerveza.</p>
+
+      <p>12 Relatos de Silvia Nanclares<br/>
+        12 Collages de Enrique Lafuente<br/>
+        Prólogo de Carolina León</p>
+    </div>
+
+    <div class="chapters list">
+      <h2>Índice</h2>
+      <% elsur_chapters.each do |name, file| %>
+          <div class="chapter item">
+            <a href="/pdfs/capitulos/<%= file %>.pdf">
+              <%= image_tag 'ui/play.png', alt: 'Descargar PDF del capítulo', width: 17, height: 17 %>
+              <%= name %>
+            </a>
+          </div>
+      <% end %>
+    </div>
+
+
+
+
+    <div class="licenses">
+      <%= image_tag 'licencias/CC-BY-SA-icon-80x15.png' %>
+    </div>
+
+  </div>
+  <div class="cover">
+    <a href="/remezclas" class="remix">
+      <%= image_tag 'elsur/portada.jpg', width: '259', height: '400' %>
+      <span>remezclas</span>
+    </a>
+  </div>
+</div>

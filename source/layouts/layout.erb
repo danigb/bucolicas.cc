@@ -1,19 +1,46 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    
-    <!-- Always force latest IE rendering engine or request Chrome Frame -->
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    
-    <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "The Middleman" %></title>
-    
-    <%= stylesheet_link_tag "normalize", "all" %>
-    <%= javascript_include_tag  "all" %>
-  </head>
-  
-  <body class="<%= page_classes %>">
+<!DOCTYPE html>
+<html lang="es" prefix="og: http://ogp.me/ns#" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+  <meta charset="utf-8" />
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <title><%= current_page.data.title || "Bienvenida" %> - Autoediciones Bucólicas</title>
+  <!-- link rel="shortcut icon" href="/favicon.ico" -->
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <style type="text/css">
+    html {    background: url('../images/logo/logo_peque.jpg') repeat;}
+  </style>
+</head>
+<body>
+
+<div id="page">
+  <div id="session">
+    <span class="name">Autoediciones Bucólicas:</span>
+    <%= link_to 'El Sur', '/' %> /
+    <%= link_to 'Remezclas', '/remezclas' %> /
+    <%= link_to 'Blog', 'http://blogs.zemos98.org/entornodeposibilidades/', target: '_blank' %>
+  </div>
+  <div id="header">
+    <%= image_tag 'cabeceras/libros.jpg' %>
+  </div>
+  <div class="content">
     <%= yield %>
-  </body>
+  </div>
+</div>
+<!-- bucólicas cache <%= Time.now %> -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11032039-9']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
 </html>
